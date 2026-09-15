@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#071330" />
+      <stop offset="50%" stop-color="#03081c" />
+      <stop offset="100%" stop-color="#020412" />
+    </radialGradient>
+
+    <!-- Top Cyan to Seafoam Gradient -->
+    <linearGradient id="cyanGrad" x1="80%" y1="10%" x2="20%" y2="80%">
+      <stop offset="0%" stop-color="#00f5ff" />
+      <stop offset="45%" stop-color="#00e5df" />
+      <stop offset="85%" stop-color="#05f0a5" />
+      <stop offset="100%" stop-color="#26f796" />
+    </linearGradient>
+
+    <!-- Lower Seafoam to Neon Lime Gradient -->
+    <linearGradient id="limeGrad" x1="20%" y1="20%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#26f796" />
+      <stop offset="35%" stop-color="#55fa3c" />
+      <stop offset="70%" stop-color="#76ff03" />
+      <stop offset="100%" stop-color="#9dff00" />
+    </linearGradient>
+
+    <!-- Right Pillar Gradient (Top Right) -->
+    <linearGradient id="pillarTopRight" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#00f7ff" />
+      <stop offset="40%" stop-color="#00d8f0" />
+      <stop offset="100%" stop-color="#00b4d8" />
+    </linearGradient>
+
+    <!-- Lower Right Wing Gradient -->
+    <linearGradient id="pillarBottomRight" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#14f195" />
+      <stop offset="50%" stop-color="#55fa3c" />
+      <stop offset="100%" stop-color="#76ff03" />
+    </linearGradient>
+
+    <!-- Left Upper Fold Gradient -->
+    <linearGradient id="pillarTopLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d5ff" />
+      <stop offset="60%" stop-color="#05e6b0" />
+      <stop offset="100%" stop-color="#22f588" />
+    </linearGradient>
+
+    <!-- 3D Shadow Facet (Upper Center Recessed) -->
+    <linearGradient id="shadowUpper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#011b33" />
+      <stop offset="100%" stop-color="#01314f" />
+    </linearGradient>
+
+    <!-- 3D Shadow Facet (Lower Center Recessed) -->
+    <linearGradient id="shadowLower" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#031e14" />
+      <stop offset="100%" stop-color="#09381e" />
+    </linearGradient>
+
+    <!-- Monogram Drop Shadow -->
+    <filter id="monogramGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#00f5ff" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <!-- Deep Midnight Navy Canvas -->
+  <rect width="1000" height="1000" fill="url(#bgGlow)" />
+
+  <!-- The Exact Geometric Brand Monogram -->
+  <g id="brand-monogram" filter="url(#monogramGlow)">
+    <!-- 1. Deep Shadow Bevels (Behind Ribbons) -->
+    <!-- Upper Inner Shadow Bevel -->
+    <polygon points="400,312 505,372 400,432 318,385" fill="url(#shadowUpper)" opacity="0.95" />
+    <!-- Lower Inner Shadow Bevel -->
+    <polygon points="400,432 505,492 400,552 358,528" fill="url(#shadowLower)" opacity="0.95" />
+
+    <!-- 2. Top-Right Vertical Wing & Cap -->
+    <!-- Top-Right Blade Outer Face -->
+    <polygon points="505,80 588,128 588,300 505,252" fill="url(#pillarTopRight)" />
+    <!-- Top-Right Diagonal Connector returning down-left -->
+    <polygon points="505,252 588,300 588,348 505,300" fill="#0096c7" opacity="0.9" />
+
+    <!-- 3. Top-Left Wing & Angled Roof -->
+    <!-- Top Roof Band connecting to Top-Left -->
+    <polygon points="505,80 505,148 400,208 318,160" fill="url(#cyanGrad)" />
+    <!-- Top-Left Upper Hook -->
+    <polygon points="318,160 400,208 318,256 318,198" fill="url(#pillarTopLeft)" />
+    <!-- Top-Left Vertical Bar -->
+    <polygon points="318,198 400,245 400,345 318,298" fill="url(#cyanGrad)" />
+
+    <!-- 4. Center Fold Crossing (Isometric Ribbon Join) -->
+    <!-- Diagonal Bridge between Upper & Lower Loops -->
+    <polygon points="318,298 400,345 505,285 423,238" fill="url(#cyanGrad)" />
+    <!-- Center Bevel Fold -->
+    <polygon points="400,345 505,405 505,372 400,312" fill="#0077b6" />
+
+    <!-- 5. Lower Diagonal Ribbon (Mint to Lime) -->
+    <!-- Crossbar running down-left -->
+    <polygon points="400,432 505,492 423,540 318,480" fill="url(#limeGrad)" />
+    <!-- Lower Left Facet Return -->
+    <polygon points="318,480 400,528 318,575 318,515" fill="url(#limeGrad)" />
+
+    <!-- 6. Bottom-Left Loop & Anchor -->
+    <!-- Lower Left Vertical Pillar -->
+    <polygon points="318,515 400,562 400,662 318,615" fill="url(#limeGrad)" />
+    <!-- Bottom Hook returning inward -->
+    <polygon points="318,615 400,662 423,648 423,735 318,675" fill="url(#limeGrad)" />
+    <!-- Bottom Apex Point -->
+    <polygon points="318,675 423,735 505,688 400,628" fill="url(#limeGrad)" />
+
+    <!-- 7. Bottom-Right Wing (Returning upward) -->
+    <!-- Lower Right Vertical Outer Pillar -->
+    <polygon points="505,492 588,445 588,618 505,665" fill="url(#pillarBottomRight)" />
+    <!-- Lower Right Inner Bevel Cut -->
+    <polygon points="505,405 588,452 588,445 505,398" fill="#1b8a36" opacity="0.8" />
+  </g>
+</svg>

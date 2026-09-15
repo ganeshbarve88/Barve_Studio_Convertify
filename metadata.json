@@ -1,0 +1,6 @@
+{
+  "name": "Convertify",
+  "description": "Convert PDF to Images and Images to PDF completely offline and private in your browser. This app is fully owned by Barve Studio, designed to help the people to convert their documents without any threat to privacy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
