@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import bsLogoUrl from '../assets/bs_logo.png';
 
 interface BarveStudioLogoProps {
   className?: string;
@@ -11,11 +12,15 @@ export const BarveStudioLogo: React.FC<BarveStudioLogoProps> = ({
   showText = true,
   size = 'md',
 }) => {
-  const [imgSrc, setImgSrc] = useState<string>('/bs_logo.png');
+  const [imgSrc, setImgSrc] = useState<string>(bsLogoUrl);
 
   const handleImgError = () => {
-    if (imgSrc === '/bs_logo.png') {
-      setImgSrc('/barve-studio-logo.svg');
+    const publicFallback = `${import.meta.env.BASE_URL}bs_logo.png`;
+    const svgFallback = `${import.meta.env.BASE_URL}barve-studio-logo.svg`;
+    if (imgSrc !== publicFallback) {
+      setImgSrc(publicFallback);
+    } else if (imgSrc !== svgFallback) {
+      setImgSrc(svgFallback);
     }
   };
 
@@ -29,13 +34,13 @@ export const BarveStudioLogo: React.FC<BarveStudioLogoProps> = ({
     <div className={`flex items-center gap-3 ${className}`}>
       {/* Visual Logo Badge */}
       <div
-        className={`${iconDimensions} shrink-0 rounded-xl overflow-hidden shadow-md shadow-emerald-950/30 border border-emerald-500/40 bg-[#03071c] flex items-center justify-center`}
+        className={`${iconDimensions} shrink-0 rounded-xl overflow-hidden shadow-xs border border-slate-200/90 bg-white flex items-center justify-center p-1`}
       >
         <img
           src={imgSrc}
           alt="Barve Studio Logo"
           onError={handleImgError}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           referrerPolicy="no-referrer"
         />
       </div>
