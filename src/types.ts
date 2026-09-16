@@ -1,4 +1,26 @@
-export type AppMode = 'pdf-to-image' | 'image-to-pdf';
+export type AppMode =
+  | 'scan-to-pdf'
+  | 'pdf-to-image'
+  | 'image-to-pdf'
+  | 'merge-pdf'
+  | 'split-pdf'
+  | 'organize-pdf'
+  | 'compress-pdf'
+  | 'pdf-to-word'
+  | 'word-to-pdf'
+  | 'lock-pdf'
+  | 'unlock-pdf';
+
+export type ScanFilter = 'original' | 'document' | 'grayscale' | 'contrast';
+
+export interface ScannedPageItem {
+  id: string;
+  originalDataUrl: string;
+  processedDataUrl: string;
+  filter: ScanFilter;
+  rotation: number; // 0, 90, 180, 270
+  timestamp: number;
+}
 
 export type ImageFormat = 'png' | 'jpeg' | 'webp';
 
