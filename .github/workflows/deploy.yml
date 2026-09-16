@@ -40,6 +40,8 @@ jobs:
 
       - name: Build Application
         run: npm run build
+        env:
+          VITE_BASE_PATH: '/Barve_Studio_Convertify/'
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5

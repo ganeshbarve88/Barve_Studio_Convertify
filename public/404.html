@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertify - Redirecting...</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // If a route or start_url misses, route immediately back to the app entry point
+      var pathSegments = window.location.pathname.split('/');
+      // If hosted at /<repo-name>/, preserve the repo name
+      var repoSegment = pathSegments[1] ? '/' + pathSegments[1] + '/' : '/Barve_Studio_Convertify/';
+      window.location.replace(window.location.origin + repoSegment);
+    </script>
+  </head>
+  <body style="font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #050a22; color: white;">
+    <div style="text-align: center;">
+      <h2>Loading Convertify...</h2>
+      <p>Redirecting to your application...</p>
+    </div>
+  </body>
+</html>
