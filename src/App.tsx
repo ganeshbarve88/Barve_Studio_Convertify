@@ -12,8 +12,11 @@ export default function App() {
   const [mode, setMode] = useState<AppMode>('pdf-to-image');
   const [isShareOpen, setIsShareOpen] = useState(false);
 
-  // Fallback to the production shared app URL
-  const shareUrl = 'https://ais-pre-6zh4wdhv5thp6oyaqut5xx-364073934766.asia-southeast1.run.app';
+  // Use current window location (e.g. GitHub Pages or custom domain) with fallback
+  const shareUrl =
+    typeof window !== 'undefined' && window.location.href && !window.location.href.includes('about:blank')
+      ? window.location.origin + window.location.pathname
+      : 'https://ganeshbarve88.github.io/Barve_Studio_Convertify/';
 
   const handleShareClick = async () => {
     if (typeof navigator !== 'undefined' && navigator.share) {
